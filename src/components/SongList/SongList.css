@@ -1,0 +1,16 @@
+.song-list {
+  color: var(--color-stone-100);
+  padding: 1rem;
+  width: 30%;
+}
+
+.tab-list {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.tab {
+  font-weight: 600;
+  font-size: 1.2rem;
+}

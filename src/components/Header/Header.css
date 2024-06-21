@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  color: var(--color-stone-100);
+  padding: 1rem;
+  width: 20%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.title p {
+  font-size: 18px;
+}
+
+.trademark {
+  font-size: 10px;
+  font-weight: 100;
+}

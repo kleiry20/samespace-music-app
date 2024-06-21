@@ -1,0 +1,26 @@
+.player {
+  padding: 4rem;
+  color: var(--color-stone-100);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.player-data h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.player-data p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.player-cover {
+  height: 400px;
+  width: 400px;
+  border: 1px solid red;
+  border-radius: 0.5rem;
+}

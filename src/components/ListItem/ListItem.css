@@ -1,0 +1,46 @@
+.song-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.song-item {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.thumbnail {
+  height: 2.4rem;
+  width: 2.4rem;
+  border-radius: 50%;
+}
+
+.song-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.song-details h3 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.song-details p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 100;
+}
+
+.song-length {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 200;
+}
