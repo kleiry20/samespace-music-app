@@ -8,8 +8,10 @@
 
 .music-app {
   display: flex;
-  height: auto;
+  height: 100vh;
   justify-content: space-between;
+  padding-top: 1rem;
+  padding-left: 1rem;
 }
 
 .gradient {

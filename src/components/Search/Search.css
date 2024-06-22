@@ -1,0 +1,24 @@
+.search-div {
+  display: flex;
+  align-items: center;
+  color: var(--color-stone-100);
+  cursor: pointer;
+}
+
+.search {
+  height: 2.5rem;
+  width: 90%;
+  padding: 1rem;
+  font-size: 0.875rem;
+  background: transparent;
+}
+
+.search-icon {
+  font-size: 1.2rem;
+  color: var(--color-stone-100);
+}
+
+.search:focus {
+  border: none;
+  outline: none;
+}

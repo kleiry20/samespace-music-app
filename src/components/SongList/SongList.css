@@ -7,10 +7,12 @@
 .tab-list {
   display: flex;
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  padding-left: 0.6rem;
 }
 
 .tab {
   font-weight: 600;
   font-size: 1.2rem;
+  cursor: pointer;
 }

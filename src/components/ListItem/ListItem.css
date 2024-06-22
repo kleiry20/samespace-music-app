@@ -1,7 +1,8 @@
 .song-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.5rem;
+  margin-top: 2rem;
 }
 
 .song-item {
@@ -9,7 +10,20 @@
   gap: 1rem;
   width: 100%;
   align-items: center;
+  cursor: pointer;
+  padding: 1rem 0.6rem;
+  border-radius: 0.4rem;
   /* justify-content: space-between; */
+}
+
+.song-item:hover {
+  /* background-image: linear-gradient(
+    to right,
+    rgba(var(--color), 0.4),
+    rgba(var(--color), 0.6)
+  ); */
+  cursor: pointer;
+  background: linear-gradient(hsl(253, 68%, 15%), hsl(252, 12%, 57%));
 }
 
 .thumbnail {

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./SongList.css";
 import ListItem from "../ListItem/ListItem";
+import Search from "../Search/Search";
 
 const SongList = (props: any) => {
   const [tab, setTab] = useState("tab1");
@@ -16,6 +17,7 @@ const SongList = (props: any) => {
           Top Tracks
         </a>
       </div>
+      <Search />
       <Tabs tab={tab} data={data} />
     </div>
   );
