@@ -26,8 +26,6 @@ const SongList = (props: any) => {
 export default SongList;
 
 const Tabs = (props: any) => {
-  // console.log("props in tabs", props);
-
   return (
     <div>
       {props.tab === "tab1" && (

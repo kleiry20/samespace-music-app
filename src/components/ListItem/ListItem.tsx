@@ -6,7 +6,7 @@ const ListItem = (props: any) => {
   return (
     <div className="song-wrapper">
       {data.data.map((item: any) => (
-        <li className="song-item">
+        <li className="song-item" key={item.id}>
           <img
             className="thumbnail"
             src={"https://picsum.photos/seed/picsum/200/300"}
