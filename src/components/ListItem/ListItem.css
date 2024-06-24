@@ -17,13 +17,13 @@
 }
 
 .song-item:hover {
-  /* background-image: linear-gradient(
+  background-image: linear-gradient(
     to right,
     rgba(var(--color), 0.4),
     rgba(var(--color), 0.6)
-  ); */
+  );
   cursor: pointer;
-  background: linear-gradient(hsl(253, 68%, 15%), hsl(252, 12%, 57%));
+  /* background: linear-gradient(hsl(253, 68%, 15%), hsl(252, 12%, 57%)); */
 }
 
 .thumbnail {

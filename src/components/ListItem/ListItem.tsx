@@ -1,7 +1,9 @@
+import { useState } from "react";
 import "./ListItem.css";
 
 const ListItem = (props: any) => {
-  console.log("props in list item", props);
+  // console.log("props in list item", props);
+  const [activeSong, setActiveSong] = useState();
   const { data } = props;
   return (
     <div className="song-wrapper">

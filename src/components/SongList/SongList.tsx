@@ -4,9 +4,20 @@ import ListItem from "../ListItem/ListItem";
 import Search from "../Search/Search";
 
 const SongList = (props: any) => {
+  const [searchText, setSearchText] = useState("");
+
   const [tab, setTab] = useState("tab1");
   const { data } = props;
 
+  function generateSearchResult() {
+    const searchResults = data.data.filter((item: any) => {
+      if (item.name.toLowerCase().includes(searchText)) {
+        return item;
+      }
+    });
+    console.log("searchResults", searchResults);
+    setSearchText("");
+  }
   return (
     <div className="song-list">
       <div className="tab-list">
@@ -17,8 +28,12 @@ const SongList = (props: any) => {
           Top Tracks
         </a>
       </div>
-      <Search />
-      <Tabs tab={tab} data={data} />
+      <Search
+        searchText={searchText}
+        setSearchText={setSearchText}
+        generateSearchResult={generateSearchResult}
+      />
+      <Tabs searchText={searchText} tab={tab} data={data} />
     </div>
   );
 };

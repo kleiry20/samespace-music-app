@@ -2,12 +2,15 @@ import { useState } from "react";
 import "./Search.css";
 import { CiSearch } from "react-icons/ci";
 
-const Search = () => {
-  const [searchText, setSearchText] = useState("");
+const Search = (props: any) => {
+  //   const [searchText, setSearchText] = useState("");
+  const { searchText, setSearchText, generateSearchResult } = props;
+
   function handleSearch(e: any) {
     e.preventDefault();
     const searchTerm = searchText.trim();
-    console.log(searchTerm);
+    console.log("searchTerm", searchTerm);
+    props.generateSearchResult();
   }
 
   return (
