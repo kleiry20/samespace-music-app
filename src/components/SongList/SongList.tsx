@@ -1,13 +1,14 @@
 import { useState } from "react";
 import "./SongList.css";
-import ListItem from "../ListItem/ListItem";
-import Search from "../Search/Search";
+import ListItem from "./ListItem/ListItem";
+import Search from "./Search/Search";
 
 const SongList = (props: any) => {
   const [searchText, setSearchText] = useState("");
+  // const [activeSong, setActiveSong] = useState();
 
   const [tab, setTab] = useState("tab1");
-  const { data } = props;
+  const { data, activeSong, setActiveSong } = props;
 
   function generateSearchResult() {
     const searchResults = data.data.filter((item: any) => {
@@ -33,7 +34,13 @@ const SongList = (props: any) => {
         setSearchText={setSearchText}
         generateSearchResult={generateSearchResult}
       />
-      <Tabs searchText={searchText} tab={tab} data={data} />
+      <Tabs
+        searchText={searchText}
+        tab={tab}
+        data={data}
+        activeSong={activeSong}
+        setActiveSong={setActiveSong}
+      />
     </div>
   );
 };
@@ -44,9 +51,13 @@ const Tabs = (props: any) => {
   return (
     <div>
       {props.tab === "tab1" && (
-        <ListItem data={props.data}>this is content of tab 1</ListItem>
+        <ListItem
+          data={props.data}
+          activeSong={props.activeSong}
+          setActiveSong={props.setActiveSong}
+        ></ListItem>
       )}
-      {props.tab === "tab2" && <div>this is content of tab 2</div>}
+      {props.tab === "tab2" && <div>tab 2</div>}
     </div>
   );
 };

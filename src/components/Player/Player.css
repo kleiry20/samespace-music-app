@@ -19,8 +19,7 @@
 }
 
 .player-cover {
-  height: 400px;
-  width: 400px;
-  border: 1px solid red;
+  height: 300px;
+  width: 350px;
   border-radius: 0.5rem;
 }

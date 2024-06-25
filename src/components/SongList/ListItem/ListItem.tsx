@@ -2,13 +2,20 @@ import { useState } from "react";
 import "./ListItem.css";
 
 const ListItem = (props: any) => {
-  // console.log("props in list item", props);
-  const [activeSong, setActiveSong] = useState();
-  const { data } = props;
+  // const [activeSong, setActiveSong] = useState(0);
+  const { data, activeSong, setActiveSong } = props;
   return (
-    <div className="song-wrapper">
+    <section className="song-wrapper">
       {data.data.map((item: any) => (
-        <li className="song-item" key={item.id}>
+        <li
+          tabIndex={-1}
+          className={`song-item`}
+          key={item.id}
+          onClick={() => {
+            setActiveSong(item);
+            console.log("see", item.name);
+          }}
+        >
           <img
             className="thumbnail"
             src={"https://picsum.photos/seed/picsum/200/300"}
@@ -25,7 +32,7 @@ const ListItem = (props: any) => {
           </audio> */}
         </li>
       ))}
-    </div>
+    </section>
   );
 };
 

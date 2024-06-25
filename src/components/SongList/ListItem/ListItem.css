@@ -23,7 +23,15 @@
     rgba(var(--color), 0.6)
   );
   cursor: pointer;
-  /* background: linear-gradient(hsl(253, 68%, 15%), hsl(252, 12%, 57%)); */
+}
+
+.song-item:focus {
+  background-image: linear-gradient(
+    to right,
+    rgba(var(--color), 0.4),
+    rgba(var(--color), 0.6)
+  );
+  cursor: pointer;
 }
 
 .thumbnail {
