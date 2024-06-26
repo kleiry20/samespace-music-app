@@ -34,10 +34,10 @@ const Player: React.FC<PlayerProps> = ({ activeSong }: any) => {
     console.log("song url", songUrl);
   }
 
-  useEffect(() => {
-    fetchImg();
-    fetchSong();
-  }, [activeSong, songUrl]);
+  // useEffect(() => {
+  //   fetchImg();
+  //   fetchSong();
+  // }, [activeSong, songUrl]);
 
   return (
     <>
