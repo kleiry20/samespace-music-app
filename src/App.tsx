@@ -8,8 +8,8 @@ import { fetchData, getInput } from "./utils/fetchData.js";
 
 function App() {
   const [data, setData] = useState();
+  const [searchResults, setSearchResults] = useState();
 
-  const [isSelected, setIsSongSelected] = useState(false);
   const [activeSong, setActiveSong] = useState({
     name: "song name",
     artist: "artist",
@@ -38,6 +38,8 @@ function App() {
             data={data}
             activeSong={activeSong}
             setActiveSong={setActiveSong}
+            searchResults={searchResults}
+            setSearchResults={setSearchResults}
           />
           <Player
             // data={data}
