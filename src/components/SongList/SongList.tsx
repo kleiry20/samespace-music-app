@@ -37,7 +37,7 @@ const SongList = (props: any) => {
     }
 
     const searchResults = data.data.filter((item: any) => {
-      if (item.name.toLowerCase().includes(searchText)) {
+      if (item.name.toLowerCase().includes(searchText.toLowerCase())) {
         return item;
       }
     });
@@ -48,7 +48,7 @@ const SongList = (props: any) => {
       return;
     } else {
       setSearchResults(searchResults);
-      setSearchText("");
+      // setSearchText("");
     }
   }
   console.log("generateSearchResult", searchResults);
