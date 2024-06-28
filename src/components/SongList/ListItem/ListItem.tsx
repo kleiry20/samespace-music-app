@@ -4,7 +4,7 @@ import { selectSong } from "../../../features/player/player";
 import { RootState } from "../../../store";
 
 const ListItem = (props: any) => {
-  const { data, searchResults } = props;
+  const { data } = props;
 
   const dispatch = useDispatch();
   const searchList = useSelector(

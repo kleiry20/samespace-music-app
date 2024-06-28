@@ -77,13 +77,13 @@ const AudioPlayer: React.FC = () => {
     setIsPlaying(false);
   };
 
-  const handleSeek = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newTime = Number(event.target.value);
-    if (audioRef.current) {
-      audioRef.current.currentTime = newTime;
-      setCurrentTime(newTime);
-    }
-  };
+  // const handleSeek = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const newTime = Number(event.target.value);
+  //   if (audioRef.current) {
+  //     audioRef.current.currentTime = newTime;
+  //     setCurrentTime(newTime);
+  //   }
+  // };
 
   const nextSong = () => {
     const currentIndex = songs.findIndex(

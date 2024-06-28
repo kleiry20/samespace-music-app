@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "./store";
@@ -33,7 +33,7 @@ function App() {
       {songList && (
         <div
           className="music-app"
-          style={{ background: generateGradient(selectedSong?.accent) }}
+          style={{ background: generateGradient(selectedSong?.accent) }} // @ts-ignore
         >
           <Header />
 

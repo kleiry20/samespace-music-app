@@ -13,7 +13,7 @@ import {
 const Search = (props: any) => {
   const { data } = props;
   const [searchText, setSearchText] = useState<string>("");
-  const [searchResults, setSearchResults] = useState(new Array());
+  const [_searchResults, setSearchResults] = useState(new Array()); // @ts-ignore
   const dispatch = useDispatch();
 
   const selectedSong = useSelector(
@@ -68,14 +68,14 @@ const Search = (props: any) => {
 
   function handleSearch(e: any) {
     e.preventDefault();
-    const searchTerm = searchText.trim();
+    // const searchTerm = searchText.trim();
     generateSearchResult();
   }
 
   return (
     <div
       className="search-div"
-      style={{ background: generateSlightlyLighterColor(selectedSong?.accent) }}
+      style={{ background: generateSlightlyLighterColor(selectedSong?.accent) }} // @ts-ignore
     >
       <input
         onChange={(e) => setSearchText(e.target.value)}
