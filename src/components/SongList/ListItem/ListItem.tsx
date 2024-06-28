@@ -38,7 +38,7 @@ const ListItem = (props: any) => {
         : data.map((item: any) => (
             <li
               tabIndex={-1}
-              className={`song-item`}
+              className={`song-item `}
               key={item.id}
               onClick={() => {
                 dispatch(selectSong(item));

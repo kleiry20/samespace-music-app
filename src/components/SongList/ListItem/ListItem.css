@@ -12,7 +12,6 @@
   cursor: pointer;
   padding: 1rem 0.6rem;
   border-radius: 0.4rem;
-  /* justify-content: space-between; */
 }
 
 .song-item:hover {
@@ -21,7 +20,6 @@
     rgba(var(--color), 0.4),
     rgba(var(--color), 0.6)
   );
-  cursor: pointer;
 }
 
 .song-item:focus {
@@ -30,7 +28,6 @@
     rgba(var(--color), 0.4),
     rgba(var(--color), 0.6)
   );
-  cursor: pointer;
 }
 
 .thumbnail {

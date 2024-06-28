@@ -30,8 +30,6 @@ const SongList = (props: any) => {
       ) : (
         <Tabs tab={tab} data={data} />
       )}
-
-      {/* {searchList && searchList.length === 0 && <div>Sorry, no results</div>} */}
     </div>
   );
 };

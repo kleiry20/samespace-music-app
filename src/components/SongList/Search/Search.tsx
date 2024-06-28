@@ -38,7 +38,7 @@ const Search = (props: any) => {
     return errors;
   }
 
-  function generateSearchResult() {
+  function generateSearchResult(searchText: string) {
     const validationErrors = validate(searchText);
 
     if (validationErrors.length > 0) {
@@ -56,7 +56,6 @@ const Search = (props: any) => {
       console.log("No results found.");
       setSearchResults([]);
       dispatch(clearSearchResult());
-
       return;
     } else {
       // setSearchResults(searchResults);
@@ -68,14 +67,16 @@ const Search = (props: any) => {
 
   function handleSearch(e: any) {
     e.preventDefault();
-    // const searchTerm = searchText.trim();
-    generateSearchResult();
+    const searchTerm = searchText.trim();
+    generateSearchResult(searchTerm);
   }
 
   return (
     <div
       className="search-div"
-      style={{ background: generateSlightlyLighterColor(selectedSong?.accent) }} // @ts-ignore
+      style={{
+        background: generateSlightlyLighterColor(`${selectedSong?.accent}`),
+      }}
     >
       <input
         onChange={(e) => setSearchText(e.target.value)}

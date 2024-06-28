@@ -33,7 +33,7 @@ function App() {
       {songList && (
         <div
           className="music-app"
-          style={{ background: generateGradient(selectedSong?.accent) }} // @ts-ignore
+          style={{ background: generateGradient(`${selectedSong?.accent}`) }}
         >
           <Header />
 

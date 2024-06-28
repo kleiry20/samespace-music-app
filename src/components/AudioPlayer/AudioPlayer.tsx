@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { selectSong } from "../../features/player/player";
 import ProgressBar from "./ProgressBar";
+import { generateSlightlyDarkerColor } from "../../utils/generateGradient";
 
 //  icons
 import {
@@ -113,13 +114,6 @@ const AudioPlayer: React.FC = () => {
       {selectedSong && (
         <>
           <audio ref={audioRef} src={selectedSong.url} preload="metadata" />
-          {/* <div>
-            <button onClick={previousSong}>Previous</button>
-            <button onClick={isPlaying ? pause : play}>
-              {isPlaying ? "Pause" : "Play"}
-            </button>
-            <button onClick={nextSong}>Next</button>
-          </div> */}
 
           <ProgressBar
             progressBarRef={progressBarRef}
@@ -129,7 +123,14 @@ const AudioPlayer: React.FC = () => {
           />
 
           <div className="control-group">
-            <button className="circle btn-gradient">
+            <button
+              className="circle"
+              style={{
+                background: generateSlightlyDarkerColor(
+                  `${selectedSong?.accent}`
+                ),
+              }}
+            >
               <IoEllipsisHorizontal />
             </button>
 
@@ -138,7 +139,10 @@ const AudioPlayer: React.FC = () => {
                 <IoPlayBack />
               </button>
               <div className="play-div">
-                <button className="play-btn circle" onClick={isPlaying ? pause : play}>
+                <button
+                  className="play-btn circle"
+                  onClick={isPlaying ? pause : play}
+                >
                   {isPlaying ? <FaPause /> : <FaPlay />}
                 </button>
               </div>
@@ -147,7 +151,15 @@ const AudioPlayer: React.FC = () => {
                 <IoPlayForward />
               </button>
             </div>
-            <button onClick={toggleMute} className="circle btn-gradient">
+            <button
+              onClick={toggleMute}
+              className="circle"
+              style={{
+                background: generateSlightlyDarkerColor(
+                  `${selectedSong?.accent}`
+                ),
+              }}
+            >
               {isMuted ? <IoVolumeMute /> : <IoVolumeMediumSharp />}
             </button>
           </div>
