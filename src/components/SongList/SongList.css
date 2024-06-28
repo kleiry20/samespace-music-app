@@ -16,3 +16,14 @@
   font-size: 1.2rem;
   cursor: pointer;
 }
+
+.tab-wrapper {
+  margin-top: 1rem;
+}
+
+/* responsive */
+@media only screen and (max-width: 768px) {
+  .song-list {
+    width: 100%;
+  }
+}

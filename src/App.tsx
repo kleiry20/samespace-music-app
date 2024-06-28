@@ -1,58 +1,52 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "./store";
+import { fetchSongs } from "./features/songList/songList.js";
+import { generateGradient } from "./utils/generateGradient.js";
 import Header from "./components/Header/Header";
 import Player from "./components/Player/Player";
 import SongList from "./components/SongList/SongList";
-
-import { fetchData, getInput } from "./utils/fetchData.js";
+import AudioPlayer from "./components/AudioPlayer/AudioPlayer.js";
+import { selectSong } from "./features/player/player.js";
 
 function App() {
-  const [data, setData] = useState();
-  const [searchResults, setSearchResults] = useState();
+  const dispatch = useDispatch();
 
-  const [activeSong, setActiveSong] = useState({
-    name: "song name",
-    artist: "artist",
-    url: "",
-    cover: "",
-  });
+  const songList: any = useSelector((state: RootState) => state.songList.data);
+  const selectedSong = useSelector(
+    (state: RootState) => state.player.selectedSong
+  );
 
   useEffect(() => {
-    fetch("https://cms.samespace.com/items/songs")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("fetc", data);
-        setData(data);
-      });
-  }, []);
+    dispatch(fetchSongs());
+  }, [dispatch]);
 
-  // console.log(data);
-  fetchData();
+  useEffect(() => {
+    if (songList.length > 0 && !selectedSong) {
+      dispatch(selectSong(songList[0]));
+    }
+  }, [songList, selectedSong, dispatch]);
 
   return (
     <>
-      {data && (
-        <div className="music-app gradient">
+      {songList && (
+        <div
+          className="music-app"
+          style={{ background: generateGradient(selectedSong?.accent) }}
+        >
           <Header />
-          <SongList
-            data={data}
-            activeSong={activeSong}
-            setActiveSong={setActiveSong}
-            searchResults={searchResults}
-            setSearchResults={setSearchResults}
-          />
-          <Player
-            // data={data}
-            activeSong={activeSong}
 
-            // setActiveSong={setActiveSong}
-          />
+          <SongList data={songList} />
+
+          {selectedSong && (
+            <div className="music-player">
+              <Player />
+              <AudioPlayer />
+            </div>
+          )}
         </div>
       )}
-
-      {/* <h3>Hi</h3>
-      <input type="text" id="input" placeholder="enter here" />
-      <button onClick={() => getInput()}>submit</button> */}
     </>
   );
 }

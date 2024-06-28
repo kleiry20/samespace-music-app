@@ -5,6 +5,7 @@
   width: 20%;
   flex-direction: column;
   justify-content: space-between;
+  height: 90%;
 }
 
 .title {
@@ -33,4 +34,12 @@
 
 .user img {
   border-radius: 50%;
+}
+
+/* responsive */
+@media only screen and (max-width: 768px) {
+  .header {
+    width: 100%;
+    flex-direction: row;
+  }
 }

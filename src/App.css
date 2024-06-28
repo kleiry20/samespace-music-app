@@ -8,7 +8,7 @@
 
 .music-app {
   display: flex;
-  height: 100vh;
+  height: 1000px;
   justify-content: space-between;
   padding-top: 1rem;
   padding-left: 1rem;
@@ -21,4 +21,34 @@
     rgba(var(--color), 1),
     rgba(var(--color), var(--alpha))
   );
+}
+
+.music-player {
+  padding: 4rem;
+  color: var(--color-stone-100);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.player-cover {
+  height: 300px;
+  width: 350px;
+  border-radius: 0.5rem;
+}
+
+.footer{
+  
+}
+
+/* responsive */
+@media only screen and (max-width: 768px) {
+  .music-app {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column-reverse;
+    height: auto
+  }
+  
+
 }

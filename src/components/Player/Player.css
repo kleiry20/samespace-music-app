@@ -1,5 +1,5 @@
 .player {
-  padding: 4rem;
+  /* padding: 4rem; */
   color: var(--color-stone-100);
   display: flex;
   flex-direction: column;
@@ -18,8 +18,19 @@
   font-weight: 100;
 }
 
-.player-cover {
-  height: 300px;
-  width: 350px;
+.player-cover-div {
   border-radius: 0.5rem;
+}
+
+.player-cover {
+  height: 23.125rem;
+  width: 22.5rem;
+}
+
+/* responsive */
+@media only screen and (max-width: 768px) {
+  .player-cover-div {
+    display: flex;
+    justify-content: center;
+  }
 }

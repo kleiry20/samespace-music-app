@@ -1,18 +1,26 @@
 import "./ListItem.css";
+import { useDispatch, useSelector } from "react-redux";
+import { selectSong } from "../../../features/player/player";
+import { RootState } from "../../../store";
 
 const ListItem = (props: any) => {
-  const { data, activeSong, setActiveSong, searchResults } = props;
+  const { data, searchResults } = props;
+
+  const dispatch = useDispatch();
+  const searchList = useSelector(
+    (state: RootState) => state.search.searchResults
+  );
 
   return (
     <section className="song-wrapper">
-      {searchResults
-        ? searchResults.map((item: any) => (
+      {searchList && searchList.length > 0
+        ? searchList.map((item: any) => (
             <li
               tabIndex={-1}
               className={`song-item`}
               key={item.id}
               onClick={() => {
-                setActiveSong(item);
+                dispatch(selectSong(item));
               }}
             >
               <img
@@ -27,13 +35,13 @@ const ListItem = (props: any) => {
               <p className="song-length">2:30</p>
             </li>
           ))
-        : data.data.map((item: any) => (
+        : data.map((item: any) => (
             <li
               tabIndex={-1}
               className={`song-item`}
               key={item.id}
               onClick={() => {
-                setActiveSong(item);
+                dispatch(selectSong(item));
               }}
             >
               <img
