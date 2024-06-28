@@ -11,7 +11,7 @@ import {
 } from "../../../features/search/search";
 
 const Search = (props: any) => {
-  const { data, isPresent, setIsPresent } = props;
+  const { data, setIsPresent } = props;
   const [searchText, setSearchText] = useState<string>("");
   const [_searchResults, setSearchResults] = useState(new Array()); // @ts-ignore
   const dispatch = useDispatch();

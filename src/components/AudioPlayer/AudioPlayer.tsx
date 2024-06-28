@@ -28,7 +28,7 @@ const AudioPlayer: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isMuted, setIsMuted] = useState<boolean>(false);
 
-  const [currentTime, setCurrentTime] = useState<number>(0);
+  const [_currentTime, setCurrentTime] = useState<number>(0); // @ts-ignore
   const [duration, setDuration] = useState<number>(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const progressBarRef = useRef<HTMLInputElement | null>(null);
