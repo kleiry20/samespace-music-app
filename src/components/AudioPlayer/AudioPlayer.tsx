@@ -3,8 +3,8 @@ import "./AudioPlayer.css";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { selectSong } from "../../features/player/player";
-import ProgressBar from "./ProgressBar";
-import { generateSlightlyDarkerColor } from "../../utils/generateGradient";
+import ProgressBar from "./ProgressBar/ProgressBar";
+import { generateSlightlyLighterColor } from "../../utils/generateGradient";
 
 //  icons
 import {
@@ -78,14 +78,6 @@ const AudioPlayer: React.FC = () => {
     setIsPlaying(false);
   };
 
-  // const handleSeek = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const newTime = Number(event.target.value);
-  //   if (audioRef.current) {
-  //     audioRef.current.currentTime = newTime;
-  //     setCurrentTime(newTime);
-  //   }
-  // };
-
   const nextSong = () => {
     const currentIndex = songs.findIndex(
       (song) => song.id === selectedSong?.id
@@ -113,12 +105,16 @@ const AudioPlayer: React.FC = () => {
     <div className="control-bar">
       {selectedSong && (
         <>
-          <audio ref={audioRef} src={selectedSong.url} preload="metadata" />
+          <audio
+            autoPlay
+            ref={audioRef}
+            src={selectedSong.url}
+            preload="metadata"
+          />
 
           <ProgressBar
             progressBarRef={progressBarRef}
             audioRef={audioRef}
-            timeProgress={currentTime}
             duration={duration}
           />
 
@@ -126,7 +122,7 @@ const AudioPlayer: React.FC = () => {
             <button
               className="circle"
               style={{
-                background: generateSlightlyDarkerColor(
+                background: generateSlightlyLighterColor(
                   `${selectedSong?.accent}`
                 ),
               }}
@@ -155,7 +151,7 @@ const AudioPlayer: React.FC = () => {
               onClick={toggleMute}
               className="circle"
               style={{
-                background: generateSlightlyDarkerColor(
+                background: generateSlightlyLighterColor(
                   `${selectedSong?.accent}`
                 ),
               }}

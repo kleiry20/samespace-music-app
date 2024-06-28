@@ -33,4 +33,22 @@
     display: flex;
     justify-content: center;
   }
+  .player-cover {
+    height: 20rem;
+    width: 20rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .player-cover {
+    height: 15rem;
+    width: 14rem;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .player-cover {
+    height: 15rem;
+    width: 14rem;
+  }
 }

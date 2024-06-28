@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 const SongList = (props: any) => {
   const [tab, setTab] = useState("tab1");
+  const [isPresent, setIsPresent] = useState(true);
   const { data } = props;
 
   const searchList = useSelector(
@@ -23,10 +24,14 @@ const SongList = (props: any) => {
           Top Tracks
         </a>
       </div>
-      <Search data={data} />
+      <Search data={data} isPresent={isPresent} setIsPresent={setIsPresent} />
 
-      {searchList && searchList.length > 0 ? (
+      {searchList && searchList.length > 0 && isPresent === true ? (
         <Tabs tab={tab} data={searchList} />
+      ) : isPresent === false ? (
+        <div style={{ color: "darkred", marginTop: "1rem" }}>
+          Invalid search! Please try again
+        </div>
       ) : (
         <Tabs tab={tab} data={data} />
       )}

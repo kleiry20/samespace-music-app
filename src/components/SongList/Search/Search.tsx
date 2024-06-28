@@ -11,7 +11,7 @@ import {
 } from "../../../features/search/search";
 
 const Search = (props: any) => {
-  const { data } = props;
+  const { data, isPresent, setIsPresent } = props;
   const [searchText, setSearchText] = useState<string>("");
   const [_searchResults, setSearchResults] = useState(new Array()); // @ts-ignore
   const dispatch = useDispatch();
@@ -46,22 +46,27 @@ const Search = (props: any) => {
       return;
     }
 
-    const searchResults = data.filter((item: any) => {
+    const searchResultArr = data.filter((item: any) => {
       if (item.name.toLowerCase().includes(searchText.toLowerCase())) {
         return item;
+      } else {
+        setIsPresent(false);
+        setSearchResults([]);
       }
     });
 
-    if (searchResults.length === 0) {
+    if (searchResultArr.length === 0) {
       console.log("No results found.");
+      setIsPresent(false);
       setSearchResults([]);
       dispatch(clearSearchResult());
       return;
     } else {
       // setSearchResults(searchResults);
-      for (let i = 0; i < searchResults.length; i++) {
-        dispatch(addSearchResult(searchResults[i]));
+      for (let i = 0; i < searchResultArr.length; i++) {
+        dispatch(addSearchResult(searchResultArr[i]));
       }
+      setIsPresent(true);
     }
   }
 

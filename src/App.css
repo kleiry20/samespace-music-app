@@ -8,11 +8,11 @@
 
 .music-app {
   display: flex;
-  /* height: 100vh; */
+  height: 100vh;
   justify-content: space-between;
   padding-top: 1rem;
   padding-left: 1rem;
-  height: auto;
+  /* height: auto; */
 }
 
 .gradient {
@@ -39,11 +39,41 @@
 }
 
 /* responsive */
+@media only screen and (max-width: 1440px) {
+  .music-app {
+    height: auto;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .music-app {
     display: flex;
     flex-direction: column;
     flex-flow: column-reverse;
     height: auto;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .music-app {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column-reverse;
+    height: auto;
+  }
+  .music-player {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .music-app {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column-reverse;
+    height: auto;
+  }
+  .music-player {
+    padding: 2rem;
   }
 }
